@@ -38,7 +38,7 @@ public class AnalyzeService {
                 .filter(Objects::nonNull)
                 .reduce(Double::sum)
                 .map(sum -> 100/sum)
-                .map(sum -> BigDecimal.valueOf(sum).setScale(2, RoundingMode.UP))
+                .map(sum -> BigDecimal.valueOf(sum).setScale(0, RoundingMode.UP))
                 .orElse(BigDecimal.ZERO)
             ))
             .collect(Collectors.toMap(Pair::getFirst, Pair::getSecond));
