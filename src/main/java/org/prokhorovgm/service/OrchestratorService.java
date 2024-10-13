@@ -10,6 +10,6 @@ public class OrchestratorService {
         List<String> words = DataService.readWords(DEFAULT_FILE, 0);
         AnalyzeService.analyze(words).entrySet().stream()
             .sorted(Map.Entry.comparingByValue())
-            .forEach(e -> System.out.printf("Every %sth liter is a '%s' character.\n", e.getValue(), e.getKey()));
+            .forEach(e -> System.out.printf("Total count %s of word '%s'.\n", e.getValue(), e.getKey()));
     }
 }
